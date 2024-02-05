@@ -3,7 +3,7 @@ const weatherBlock = document.querySelector('#weather');
 async function loadWeather(city) {
     weatherBlock.innerHTML = `
     <div class="weather__loading">
-        <img src="/loading.gif" alt="Loading...">
+        <img src="images/loading.gif" alt="Loading...">
     </div>`;
 
     const apiKey = '00e18f246b4cf27be7ba875eb06f1eb7';
