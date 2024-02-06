@@ -7,10 +7,10 @@ async function loadWeather(city) {
     </div>`;
 
     const apiKey = '00e18f246b4cf27be7ba875eb06f1eb7';
-    const server = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`;
     
     try {
-        const response = await fetch(server);
+        const response = await fetch(url);
         const responseResult = await response.json();
 
         if (response.ok) {
@@ -28,11 +28,11 @@ async function loadWeather(city) {
 function getWeather(data){
 
     const location = data.name;
-    const temp = Math.round(data.main.temp);
-    const feelsLike = Math.round(data.main.feels_like);
-    const pressure = Math.round(data.main.pressure);
-    const humidity = Math.round(data.main.humidity);
-    const speed = Math.round(data.wind.speed);
+    const temp = (data.main.temp);
+    const feelsLike = (data.main.feels_like);
+    const pressure = (data.main.pressure);
+    const humidity = (data.main.humidity);
+    const speed = (data.wind.speed);
     const weatherStatus = data.weather[0].main;
     const weatherIcon = data.weather[0].icon;
 
@@ -59,6 +59,6 @@ function getWeather(data){
 }
 
 if(weatherBlock) {
-    const cityToLoad = 'odesa';
+    const cityToLoad = 'chicago';
     loadWeather(cityToLoad);
 }
